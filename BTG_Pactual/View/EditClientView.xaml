@@ -7,27 +7,59 @@
     Title="Editar Cliente"
     x:DataType="mvvm:EditClientViewModel">
 
-    <StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout
+        Padding="10"
+        Spacing="15"
+        VerticalOptions="CenterAndExpand">
         <Label Text="Nome do Cliente" />
 
         <Entry Text="{Binding Name}" />
 
         <Label Text="Último Nome do Cliente" />
 
-        <Entry Text="{Binding LastName}"/>
+        <Entry Text="{Binding LastName}" />
 
-        <Label Text="Idade do Cliente"/>
+        <Label Text="Idade do Cliente" />
 
-        <Entry Text="{Binding Age}"/>
+        <Entry Text="{Binding Age}" />
 
-        <Label Text="Endereço do Cliente"/>
+        <Label Text="Endereço do Cliente" />
 
-        <Entry Text="{Binding Address}"/>
+        <Entry Text="{Binding Address}" />
 
-        <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand" ColumnSpacing="5" Padding="5">
-            <Button Text="Excluir" BackgroundColor="Red" TextColor="White" Grid.Column="0" Command="{Binding DeleteClientCommand}"/>
+        <Grid
+            Padding="5"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="5"
+            VerticalOptions="EndAndExpand"
+            Margin="0,50,0,0">
+            <Button
+                Grid.Column="0"
+                BackgroundColor="Red"
+                Command="{Binding DeleteClientCommand}"
+                ImageSource="bin.png"
+                Text="Excluir"
+                TextColor="White" />
 
-            <Button Text="Alterar" BackgroundColor="#0E0C5A" TextColor="White" Grid.Column="1" Command="{Binding UpdateClientCommand}"/>
+            <Button
+                Grid.Column="1"
+                BackgroundColor="#0E0C5A"
+                Command="{Binding UpdateClientCommand}"
+                ImageSource="update.png"
+                Text="Alterar"
+                TextColor="White" />
         </Grid>
     </StackLayout>
 

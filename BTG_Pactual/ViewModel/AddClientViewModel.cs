@@ -1,8 +1,10 @@
 ﻿using BTG_Pactual.Model;
 using BTG_Pactual.Repository;
+using BTG_Pactual.Validators;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Text;
 
 namespace BTG_Pactual.ViewModel
 {
@@ -29,6 +31,26 @@ namespace BTG_Pactual.ViewModel
         [RelayCommand]
         public async Task AddClient()
         {
+            var client = new Client(Name, LastName, Age, Address);
+
+            var contract = new ClientValidator(client);
+
+            if (!contract.IsValid)
+            {
+                var messages = contract.Notifications.Select(x => x.Message);
+
+                var sb = new StringBuilder();
+
+                foreach (var message in messages)
+                    sb.Append($"{message}\n");
+
+                await Shell.Current.DisplayAlert("Atenção", sb.ToString(), "OK");
+
+                return;
+            }
+
+
+            //Até Aqui
             var newClient = new Client(Name,LastName, Age, Address);
 
             await _repository.InsertClientAsync(newClient);
@@ -39,6 +61,18 @@ namespace BTG_Pactual.ViewModel
 
             await Shell.Current.GoToAsync("..");
         }
+
+        //private bool CanExecuteAddClient()
+        //{
+        //    var client = new Client(Name, LastName,Age,Address);
+
+        //    var contract = new ClientValidator(client);
+
+        //    if (!contract.IsValid)
+        //        return false;
+
+        //    return true;
+        //}
 
     }
 }

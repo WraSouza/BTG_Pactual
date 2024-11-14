@@ -4,12 +4,23 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mvvm="clr-namespace:BTG_Pactual.ViewModel"
-    Title="AddClientView"
+    Title="Adicionar Cliente"
     x:DataType="mvvm:AddClientViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemibold" />
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>            
+          
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <StackLayout
         Padding="10"
-        Spacing="10"
+        Spacing="15"
         VerticalOptions="Center">
 
         <Label Text="Primeiro Nome do Cliente" />
