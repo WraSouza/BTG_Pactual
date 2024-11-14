@@ -32,7 +32,7 @@ Após clicar no botão, a aplicação abrirá o formulário que deverá ser pree
 
 ![Adicionar](https://github.com/user-attachments/assets/6a9ab340-0adb-42d3-a6bc-e41b0f30409f)
 
-Após cadastrar um cliente, a aplicação retornará para a tela inicial. Após isso, deverá ser utilizando um refresh na tela, realizando um "pull to refresh", ou seja, fazendo um movimento na tela para baixo. Assim a tela será atualizada com os dados que estiverem no banco.
+Após cadastrar um cliente, a aplicação retornará para a tela inicial. Após isso, deverá ser utilizando um refresh na tela, realizando um "pull to refresh". Assim a tela será atualizada com os dados que estiverem no banco.
 
 ![TelaInicialPreenchida](https://github.com/user-attachments/assets/d3d0e392-53a3-4308-a194-ed0d6500aad3)
 
