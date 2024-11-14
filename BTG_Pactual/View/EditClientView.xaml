@@ -11,9 +11,14 @@
         <ResourceDictionary>
 
             <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="MontserratSemibold" />
+                <Setter Property="FontFamily" Value="MontserratSemiBold" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontSize" Value="18" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontFamily" Value="MontserratRegular"/>
             </Style>
 
         </ResourceDictionary>

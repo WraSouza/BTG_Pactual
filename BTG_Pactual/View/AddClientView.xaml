@@ -10,7 +10,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="MontserratSemibold" />
+                <Setter Property="FontFamily" Value="MontserratSemiBold" />
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="18"/>
             </Style>            

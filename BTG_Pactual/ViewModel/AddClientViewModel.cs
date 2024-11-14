@@ -48,12 +48,18 @@ namespace BTG_Pactual.ViewModel
 
                 return;
             }
-
-
-            //Até Aqui
+            
             var newClient = new Client(Name,LastName, Age, Address);
 
             await _repository.InsertClientAsync(newClient);
+
+            Name = "";
+
+            LastName = "";
+
+            Age = 0;
+
+            Address = "";
 
             var newtoast = Toast.Make("Cliente Cadastrado Com Sucesso", CommunityToolkit.Maui.Core.ToastDuration.Long);
 
@@ -62,17 +68,7 @@ namespace BTG_Pactual.ViewModel
             await Shell.Current.GoToAsync("..");
         }
 
-        //private bool CanExecuteAddClient()
-        //{
-        //    var client = new Client(Name, LastName,Age,Address);
-
-        //    var contract = new ClientValidator(client);
-
-        //    if (!contract.IsValid)
-        //        return false;
-
-        //    return true;
-        //}
+       
 
     }
 }
